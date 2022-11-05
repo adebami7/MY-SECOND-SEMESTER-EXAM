@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
 
-const CORRECT_PASSWORD = "fiyin";
+const CORRECT_PASSWORD = "Altschool29";
 
 function UserProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -23,7 +23,7 @@ function UserProvider({ children }) {
 
       navigate("/");
     } else {
-      setError("Password is not correct!");
+      setError("Password is Altschool29 !");
     }
   }
 
