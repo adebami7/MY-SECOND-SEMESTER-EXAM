@@ -7,23 +7,25 @@ import ProtectRoute from "./components/ProtectRoute";
 import NotFound from "./pages/notFound";
 import ErrorBoundry from "./components/ErrorBoundry";
 import NavBar from "./components/NavBar";
+import { createContext } from "react";
+
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <ErrorBoundry>
-        <UserProvider>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<ProtectRoute />}>
-              <Route index element={<Dashboard />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </UserProvider>
-      </ErrorBoundry>
-    </Router>
+        <Router>
+          <NavBar />
+          <ErrorBoundry>
+            <UserProvider>
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<ProtectRoute />}>
+                  <Route index element={<Dashboard />} />
+                </Route>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </UserProvider>
+          </ErrorBoundry>
+        </Router>
   );
 }
 
