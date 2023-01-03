@@ -11,7 +11,7 @@ function UserProvider({ children }) {
 
   const navigate = useNavigate();
 
-  function login(profile_picture, first_name, last_name, username, password) {
+  function login(profile_picture, first_name, last_name, username, email, password) {
     if (password === CORRECT_PASSWORD) {
       setError(null);
       setUser({
@@ -19,6 +19,7 @@ function UserProvider({ children }) {
         first_name,
         last_name,
         username,
+        email,
       });
 
       navigate("/");
