@@ -11,6 +11,7 @@ function Dashboard() {
         <p className="first_name">first name: {user.first_name}</p>
         <p className="last_name">last name: {user.last_name}</p>
         <p className="user_name">username: {user.username}</p>
+        <p className="email">email: {user.email}</p>
         <button onClick={logout}>Logout</button>
       </div>
     </div>

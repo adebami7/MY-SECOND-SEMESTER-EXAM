@@ -7,6 +7,7 @@ function Login() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [profilePictureName, setProfilePictureName] = useState("");
@@ -24,8 +25,9 @@ function Login() {
     return () => {
       setFirstName("");
       setLastName("");
-      setPassword("");
       setUsername("");
+      setEmail("");
+      setPassword("");
     };
   }, []);
 
@@ -35,7 +37,7 @@ function Login() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          login(profilePicture, firstName, lastName, username, password);
+          login(profilePicture, firstName, lastName, username, email, password);
         }}
       >
         {error && <div style={{ color: "red" }}>{error}</div>}
@@ -79,6 +81,16 @@ function Login() {
             onChange={(e) => setUsername(e.target.value)}
           />
           <p>User name</p>
+        </label>
+        <label htmlFor="email">
+          <input
+            type="email"
+            id="email"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <p>Email</p>
         </label>
         <label htmlFor="password">
           <input
